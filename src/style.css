@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 16px;
+
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(16, 241, 163);
+}
+
+main {
+    text-align: center;
+}
+
+.title {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 4em;
+    color: darkgreen;
+
+    padding: 10px 0;
+}
+
+.difficult {
+    display: flex;
+    justify-content: center;
+
+    padding: 20px 0;
+}
+
+.score {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    font-size: 1.17em;
+
+    padding: 20px 0;
+}
+.score span {
+    color: crimson;
+}
+
+.grid {
+    width: 763px;
+    height: fit-content;
+}
+.grid > img {
+    margin-right: 5px;
+    margin-bottom: 2px;
+    border: 2px solid darkgreen;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: .2s ease-in-out;
+}
+
+.turn {
+    transform: rotateY(90deg);
+}
