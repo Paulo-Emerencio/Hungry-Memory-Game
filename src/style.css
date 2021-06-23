@@ -11,7 +11,8 @@ body {
     width: 100vw;
     height: 100vh;
     margin: 0;
-    background-color: rgb(16, 241, 163);
+    /* background-color: rgb(16, 241, 163); */
+    background-color: cadetblue;
 }
 
 main {
@@ -41,14 +42,10 @@ main {
 
     padding: 20px 0;
 }
-.score span {
+.score #result {
     color: crimson;
 }
 
-.grid {
-    width: 763px;
-    height: fit-content;
-}
 .grid > img {
     margin-right: 5px;
     margin-bottom: 2px;

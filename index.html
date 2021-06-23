@@ -20,16 +20,16 @@
         
         <div class="difficult">
             <h2>Difficulty:</h2>
-            <select name="difficult" id="difficult">
-                <option value="easy">Easy</option>
-                <option value="medium" selected>Medium</option>
-                <option value="hard">Hard</option>
+            <select name="difficulty" id="difficulty">
+                <option value="6">Easy</option>
+                <option value="12" selected>Medium</option>
+                <option value="21">Hard</option>
             </select>
-            <input type="button" value="Confirm" onclick="">
+            <input type="button" id="confirm" value="Confirm">
         </div>
 
         <div class="score">
-            <h3>Score: <span id="result">0</span></h3>
+            <h3>Score: <span id="result">0</span><span id="total"></span></h3>
         </div>
 
         <div class="grid"></div>
