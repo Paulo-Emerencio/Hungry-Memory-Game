@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 
+
 body {
     display: flex;
     flex-direction: column;
@@ -10,9 +11,8 @@ body {
 
     width: 100vw;
     height: 100vh;
+    background-color: #f5cb62;
     margin: 0;
-    /* background-color: rgb(16, 241, 163); */
-    background-color: cadetblue;
 }
 
 main {
@@ -23,7 +23,7 @@ main {
     font-family: 'Caveat', cursive;
     font-weight: 700;
     font-size: 4em;
-    color: darkgreen;
+    color: crimson;
 
     padding: 10px 0;
 }
@@ -33,6 +33,96 @@ main {
     justify-content: center;
 
     padding: 20px 0;
+}
+.difficult > h2 {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: blue;
+    
+    padding: 10px 10px 0 0;
+}
+.difficult > .custom-select {
+    position: relative;
+}
+.difficult > .custom-select > select {
+    font-size: 1.2rem;
+    color: white;
+
+    background-color: #313c7c;
+    padding: 10px 30px 10px 20px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+
+    cursor: pointer;
+}
+.difficult > .custom-select > select:focus {
+    outline: none;
+}
+.difficult > .custom-select > .custom-arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 100%;
+    background-color: #050d38;
+
+    pointer-events: none;
+}
+.difficult > .custom-select >
+.custom-arrow::before,
+.custom-arrow::after {
+    --triangle-size: 8px;
+    --triangle-color: #32afe0;
+
+    content: '';
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+}
+.difficult > .custom-select >
+.custom-arrow::before {
+    border-left: var(--triangle-size) solid transparent;
+    border-right: var(--triangle-size) solid transparent;
+    border-bottom: var(--triangle-size) solid var(--triangle-color);
+
+    top: 26%;
+}
+.difficult > .custom-select >
+.custom-arrow::after {
+    border-left: var(--triangle-size) solid transparent;
+    border-right: var(--triangle-size) solid transparent;
+    border-top: var(--triangle-size) solid var(--triangle-color);
+
+    top: 56%;
+}
+.difficult > #confirm {
+    font-size: 1.2rem;
+    color: #050d38;
+
+    background-color: #32afe0;
+    padding: 0 10px;
+    border: 2px solid #050d38;
+    border-radius: 0;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+
+    cursor: pointer;
+}
+.difficult > #confirm:hover {
+    color: white;
+    
+}
+.difficult > #confirm:active {
+    color: #050d38;
+    border: none;
+    box-shadow: none;
 }
 
 .score {
@@ -46,13 +136,22 @@ main {
     color: crimson;
 }
 
+.grid {
+    display: inline-block;
+}
 .grid > img {
     margin-right: 5px;
     margin-bottom: 2px;
-    border: 2px solid darkgreen;
-    cursor: pointer;
+    border: 2px solid darkred;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
+
+    cursor: grab;
+
     transform-style: preserve-3d;
     transition: .2s ease-in-out;
+}
+.grid > img:active {
+    cursor: grabbing;
 }
 
 .turn {

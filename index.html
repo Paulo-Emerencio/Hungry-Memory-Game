@@ -15,16 +15,21 @@
 <body>
     <main>
         <div class="title">
-            <h1>Memory Game</h1>
+            <h1>Memory Hungry Game</h1>
         </div>
         
         <div class="difficult">
             <h2>Difficulty:</h2>
-            <select name="difficulty" id="difficulty">
-                <option value="6">Easy</option>
-                <option value="12" selected>Medium</option>
-                <option value="21">Hard</option>
-            </select>
+
+            <div class="custom-select">
+                <select name="difficulty" id="difficulty">
+                    <option value="6">Easy</option>
+                    <option value="12" selected>Medium</option>
+                    <option value="21">Hard</option>
+                </select>
+                <span class="custom-arrow"></span>
+            </div>
+
             <input type="button" id="confirm" value="Confirm">
         </div>
 

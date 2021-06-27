@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const difficulty = document.querySelector('#difficulty');
 
     const cardsSound = new Audio('src/audio/cards.mp3');
-    const matchSound = new Audio('src/audio/popup.mp3');
+    const matchSound = new Audio('src/audio/match.mp3');
     const victorySound = new Audio('src/audio/victory.mp3');
 
     let cardChosenName = [];
@@ -132,27 +132,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createBoard() {
         for (let i = 0; i < cards.length; i++) {
-            const blank = document.createElement('img');
-            flipCardAnimation(blank, 'src/images/blank.png')
-            blank.setAttribute('data-id', i);
-            blank.addEventListener('click', flipCard);
-            grid.appendChild(blank);
+            const back = document.createElement('img');
+            flipCardAnimation(back, 'src/images/back.png')
+            back.setAttribute('data-id', i);
+            back.addEventListener('click', flipCard);
+            grid.appendChild(back);
         }
     }
 
     function flipCard() {
         let cardId = this.getAttribute('data-id');
+        let cardSrcValue = cards[cardId].img;
+        
         cardChosenName.push(cards[cardId].name);
         cardChosenId.push(cardId);
 
         if (cardChosenId.length === 1) {
-            flipCardAnimation(this, cards[cardId].img);
+            flipCardAnimation(this, cardSrcValue);
         } else if (cardChosenId.length === 2) {
             if (cardChosenId[0] === cardChosenId[1]) {
                 cardChosenName.pop();
                 cardChosenId.pop();
             } else {
-                flipCardAnimation(this, cards[cardId].img);
+                flipCardAnimation(this, cardSrcValue);
                 setTimeout(checkForMatch, 700);
             }
         }
@@ -176,9 +178,10 @@ document.addEventListener('DOMContentLoaded', () => {
             result.textContent = cardsWon.length;
             if (cardsWon.length < cards.length / 2) matchSound.play();
         } else {
-            flipCardAnimation(image[cardChosenId[0]], 'src/images/blank.png');
-            flipCardAnimation(image[cardChosenId[1]], 'src/images/blank.png');
+            flipCardAnimation(image[cardChosenId[0]], 'src/images/back.png');
+            flipCardAnimation(image[cardChosenId[1]], 'src/images/back.png');
         }
+
         cardChosenName = [];
         cardChosenId = [];
 
@@ -186,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
             victorySound.play();
             total.textContent = '';
             result.textContent = 'Congratulations, you have won!';
-            setTimeout(startGame, 5000, 'reset');
+            setTimeout(startGame, 5000, true);
         }
     }
 
