@@ -6,4 +6,4 @@ I did a lot of implementations in her code, if you doubt it, you can check my js
 
 ## Want to play?
 
-Then [click here](https://paulo-emerencio.github.io/Memory-Hungry-Game)
+Then [click here](https://paulo-emerencio.github.io/Hungry-Memory-Game)
