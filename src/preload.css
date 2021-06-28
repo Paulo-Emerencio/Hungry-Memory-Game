@@ -1,0 +1,8 @@
+body::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url(images/cheeseburger.png) url(images/fries.png) url(images/hotdog.png) url(images/cookie.png) url(images/milkshake.png) url(images/pizza.png) url(images/sushi.png) url(images/egg.png) url(images/chicken.png) url(images/cheese.png) url(images/sunday.png) url(images/steak.png) url(images/banana.png) url(images/carrot.png) url(images/chocolate.png) url(images/pancake.png) url(images/pudding.png) url(images/grape.png) url(images/popcorn.png) url(images/ice.png) url(images/donut.png) url(images/cake.png) url(images/onigiri.png) url(images/cutlet.png);
+}

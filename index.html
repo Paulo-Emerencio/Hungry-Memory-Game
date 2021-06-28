@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Memory Game</title>
 
+    <link rel="stylesheet" href="src/preload.css">
     <link rel="stylesheet" href="src/reset.css">
     <link rel="stylesheet" href="src/style.css">
     <script src="src/index.js"></script>
@@ -24,8 +25,8 @@
             <div class="custom-select">
                 <select name="difficulty" id="difficulty">
                     <option value="6">Easy</option>
-                    <option value="12" selected>Medium</option>
-                    <option value="21">Hard</option>
+                    <option value="12" selected>Normal</option>
+                    <option value="24">Hard</option>
                 </select>
                 <span class="custom-arrow"></span>
             </div>
@@ -34,10 +35,14 @@
         </div>
 
         <div class="score">
-            <h3>Score: <span id="result">0</span><span id="total"></span></h3>
+            <h3 id="level"></h3>
+            <span id="result"></span><span id="total"></span>
         </div>
 
         <div class="grid"></div>
     </main>
+    <footer>
+        <p>Copyright &copy; 2021 Paulo Emerencio</p>
+    </footer>
 </body>
 </html>

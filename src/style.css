@@ -10,13 +10,14 @@ body {
     font-size: 16px;
 
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f5cb62;
     margin: 0;
 }
 
 main {
     text-align: center;
+    min-height: 97vh;
 }
 
 .title {
@@ -132,6 +133,9 @@ main {
 
     padding: 20px 0;
 }
+.score > h3 {
+    display: inline-block;
+}
 .score #result {
     color: crimson;
 }
@@ -156,4 +160,15 @@ main {
 
 .turn {
     transform: rotateY(90deg);
+}
+
+footer > p {
+    font-family: 'Roboto Mono', monospace;
+    color: #775500;
+}
+
+@media (max-height: 910px) {
+    footer {
+        margin: 15px 0;
+    }
 }

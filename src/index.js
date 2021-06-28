@@ -85,11 +85,24 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'donut',
             img: 'src/images/donut.png',
         },
+        {
+            name: 'cake',
+            img: 'src/images/cake.png',
+        },
+        {
+            name: 'onigiri',
+            img: 'src/images/onigiri.png',
+        },
+        {
+            name: 'cutlet',
+            img: 'src/images/cutlet.png',
+        },
     ];
 
     const grid = document.querySelector('.grid');
-    const result = document.querySelector('#result');
+    const level = document.querySelector('#level');
     const total = document.querySelector('#total');
+    const result = document.querySelector('#result');
     const confirm = document.querySelector('#confirm');
     const difficulty = document.querySelector('#difficulty');
 
@@ -97,14 +110,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const matchSound = new Audio('src/audio/match.mp3');
     const victorySound = new Audio('src/audio/victory.mp3');
 
+    let currentDifficulty = difficulty.value;
     let cardChosenName = [];
     let cardChosenId = [];
     let cardsWon = [];
     let cards;
     
-    confirm.addEventListener('click', startGame);
+    confirm.addEventListener('click', function () {
+        if (currentDifficulty != difficulty.value) {
+            currentDifficulty = difficulty.value;
+            startGame(true);
+        }    
+    });
     
-    function startGame(reset) {
+    function startGame(cardSound) {
         arrCards.sort(() => 0.5 - Math.random());
 
         const arrCardsFiltered = arrCards.filter((elem,index) =>
@@ -122,11 +141,20 @@ document.addEventListener('DOMContentLoaded', () => {
         result.textContent = cardsWon.length;
         total.textContent = '/' + difficulty.value;
 
-        if (difficulty.value == 6) grid.style.width = '436px';
-        if (difficulty.value == 12) grid.style.width = '654px';
-        if (difficulty.value == 21) grid.style.width = '763px';
+        if (difficulty.value == 6) {
+            level.textContent = 'Easy:';
+            grid.style.width = '436px';
+        }
+        if (difficulty.value == 12) {
+            level.textContent = 'Normal:';
+            grid.style.width = '654px';
+        }
+        if (difficulty.value == 24) {
+            level.textContent = 'Hard:';
+            grid.style.width = '872px';
+        }
 
-        if(reset)cardsSound.play();
+        if(cardSound)cardsSound.play();
         createBoard();
     }
 
