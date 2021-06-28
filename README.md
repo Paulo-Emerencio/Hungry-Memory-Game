@@ -1,4 +1,4 @@
-# Memory Hungry Game
+# Hungry  Memory Game
 
 This is the classical and millenarian memory game that I made in HTML, CSS and Javascript, using as base the [Ania Kubow repository](https://github.com/kubowania/memory-game)
 
